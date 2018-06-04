@@ -1,0 +1,39 @@
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 连接数据的基本配置 (4个参数) -->
+	<environments default="mysql">
+	    <!--  具体连接配置,取代之前的C3P0 -->
+		<environment id="mysql">
+		    <!-- 当前由于没有和spring整合,默认写JDBC,手动管理事务 -->
+			<transactionManager type="JDBC" />
+			<!-- 配置链接池的相关操作 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/mysql" />
+				<property name="username" value="root" />
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+		<!-- 可以配置连接到多个数据库 -->
+		<environment id="oracle">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!--   此处是映射文件的配置,后期SQL语句会写到此映射文件中 
+	<mappers>
+		<mapper resource="org/mybatis/example/BlogMapper.xml" />
+	</mappers>
+	 -->
+</configuration>
+
+
+
+
