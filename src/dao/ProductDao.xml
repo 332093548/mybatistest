@@ -9,4 +9,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        <!-- #{name},会自动调用Product.getName()方法  -->
    	   insert into product (name,price,remark) values (#{name},#{price},#{remark})
    </insert>
+   
+   <update id="update" parameterType="model.Product">
+       <!-- #{name},会自动调用Product.getName()方法  -->
+   	   update product set name = #{name},price = #{price},remark = #{remark} where id = #{id}
+   </update>
 </mapper>
