@@ -11,8 +11,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    </insert>
    
    <update id="update" parameterType="product">
-       <!-- #{name},会自动调用Product.getName()方法  -->
-   	   update product set name = #{name},price = #{price},remark = #{remark} where id = #{id}
+       <!-- #{name},会自动调用Product.getName()方法  
+	   	   update product set name = #{name},price = #{price},remark = #{remark},date=#{date} where id = #{id}
+       -->
+       update product
+       <!-- set会自动删除最后一个,号 -->
+       <set>
+       		<if test="name!=null">
+       			name = #{name},
+       		</if>
+       		<if test="price!=null">
+       			price = #{price},
+       		</if>
+       		<if test="remark!=null">
+       			remark = #{remark},
+       		</if>
+       		<if test="date!=null">
+       			date = #{date},
+       		</if>
+       </set>
+       where id = #{id}
    </update>
    <!-- 如果只有一个参数, 那么#{名称随意},当然为了规范,建议与参数相同 -->
    <delete id="delete" parameterType="int">

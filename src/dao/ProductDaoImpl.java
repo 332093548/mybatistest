@@ -15,17 +15,18 @@ public class ProductDaoImpl {
 	public static void main(String[] args) {
 		ProductDaoImpl daoImpl = new ProductDaoImpl();
 		Product product = new Product();
-		product.setName("yyy");
-		product.setId(40);
-		product.setPrice(300.00);
-		product.setRemark("更新测试!");
-		// daoImpl.update(product);
+		product.setName("zzz");
+		product.setId(3);
+		product.setPrice(6.28);
+		product.setRemark("我是备注!!!");
+//		product.setRemark("更新测试!");
+		 daoImpl.update(product);
 //		for (Product temp : daoImpl.queryByName("")) {
 //			System.out.println(temp);
 //		}
-		for (Product temp : daoImpl.queryLike("", null, 3.0)) {
-			System.out.println(temp);
-		}
+//		for (Product temp : daoImpl.queryLike("", null, 3.0)) {
+//			System.out.println(temp);
+//		}
 	}
 
 	// mybatis实现数据入库的功能

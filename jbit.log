@@ -73,3 +73,31 @@
 2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@531be3c5]
 2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Created connection 1236977832.
 2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@49bac8a8]
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Class not found: org.jboss.vfs.VFS
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG JBoss 6 VFS API is not available in this environment.
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Class not found: org.jboss.vfs.VirtualFile
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Find JAR URL: file:/D:/work/mycode/mybatistest/bin/model
+2018-06-04 15:46:07 JakartaCommonsLoggingImpl.java DEBUG Not a JAR: file:/D:/work/mycode/mybatistest/bin/model
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Reader entry: Product.class
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Listing file:/D:/work/mycode/mybatistest/bin/model
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Find JAR URL: file:/D:/work/mycode/mybatistest/bin/model/Product.class
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Not a JAR: file:/D:/work/mycode/mybatistest/bin/model/Product.class
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Reader entry: ����   4 [  
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Checking to see if class model.Product matches criteria [is assignable to Object]
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 15:46:08 JakartaCommonsLoggingImpl.java DEBUG Opening JDBC Connection
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG Created connection 504527234.
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1e127982]
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1e127982]
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG ==>  Preparing: select * from product WHERE name like ? and price > ? 
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG ==> Parameters: %%(String), 3.0(Double)
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG <==    Columns: id, name, price, remark, date
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG <==        Row: 1, computer, 3000.00, <<BLOB>>, 2018-06-04 14:40:46.0
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG <==        Row: 2, Iphone6, 6000.00, <<BLOB>>, 2018-06-04 14:40:47.0
+2018-06-04 15:46:09 JakartaCommonsLoggingImpl.java DEBUG <==      Total: 2
