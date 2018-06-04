@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 当前xml文件会取代以后daoImpl,因此所有的SQL语句建议编写XML文件中,而且此XML文件需要添加到mybatis.cfg.xml主配置文件中 -->
+<mapper namespace="aa.bb.cc">
+   <!-- 此处将要编写数据入库的SQL语句    public void save(Product product)-->
+   <insert id="save" parameterType="model.Product">
+       <!-- #{name},会自动调用Product.getName()方法  -->
+   	   insert into product (name,price,remark) values (#{name},#{price},#{remark})
+   </insert>
+</mapper>
