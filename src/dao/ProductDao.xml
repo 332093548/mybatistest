@@ -23,7 +23,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    		select * from product where name like #{keyword}
    </select>
    
-   
+   <!-- 采用mybatis完成高级搜索（多条件查询） map: java.util.Map, 如果是map格式,可以通过key获取value -->
+   <select id="queryLike" parameterType="map" resultType="product">
+   		select * from product
+   		<where>
+   		    <!-- if是mybatis提供的表达式,不用再添加#{} -->
+   			<if test="keyword!=null">
+   				and name like #{keyword}
+   			</if>
+   			<if test="max!=null">
+   				and price &lt; #{max} 
+   			</if>
+   			<if test="min!=null">
+   				and price &gt; #{min}
+   			</if>
+   		</where>
+   </select>
 </mapper>
 
 
