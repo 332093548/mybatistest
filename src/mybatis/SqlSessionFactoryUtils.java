@@ -10,21 +10,54 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class SqlSessionFactoryUtils {
 	// 用来创建SqlSession的工厂,SqlSession就是之前Connectoin
 	private static SqlSessionFactory factory;
+	// 声明一个线程变量
+	private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<SqlSession>();
+	
+	// 构造方法私有,避免创建对象
+	private SqlSessionFactoryUtils() {
+		
+	}
 	
 	public static void main(String[] args) {
 		// SqlSession代理,里面封装了Connection
 		SqlSession sqlSession = getSqlSession();
-		System.out.println(sqlSession.getConnection());
+		SqlSession sqlSession2 = getSqlSession();
+		
+		// 创建一个独立的线程进行测试
+		new Thread() {
+			@Override
+			public void run() {
+				SqlSession sqlSession = getSqlSession();
+				SqlSession sqlSession2 = getSqlSession();
+				System.out.println("t:" + sqlSession.getConnection());
+				System.out.println("t:" + sqlSession2.getConnection());
+			}
+			
+		}.start();
+		
+		System.out.println("m:" + sqlSession.getConnection());
+		System.out.println("m:" + sqlSession2.getConnection());
 	}
 	
 	// SqlSessionFactory是用来创建SqlSessoin工厂.
 	public static SqlSession  getSqlSession() {
-		return factory.openSession();
+		// 首先判断当前线程变量中是否已有SqlSession
+		SqlSession sqlSession = threadLocal.get();
+		if(sqlSession==null) {
+			// 当前线程变量中没有存储sqlSession,需要重新创建
+			sqlSession = factory.openSession();
+			// 把当前变量存储到线程变量中
+			threadLocal.set(sqlSession);
+		}
+		return sqlSession;
 	}
 	
-	public static void closeSession(SqlSession sqlSession) {
-		if(sqlSession!=null)
+	public static void closeSession() {
+		SqlSession sqlSession = threadLocal.get();
+		if(sqlSession!=null) {
 			sqlSession.close();
+			threadLocal.set(null);
+		}
 	}
 
 	// 读取jar,xml配置,io流一般都只一次,因此会写到静态块中
