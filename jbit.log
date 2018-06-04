@@ -62,3 +62,14 @@
 2018-06-04 11:43:56 JakartaCommonsLoggingImpl.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@59fa1d9b]
 2018-06-04 11:43:56 JakartaCommonsLoggingImpl.java DEBUG Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@59fa1d9b]
 2018-06-04 11:43:56 JakartaCommonsLoggingImpl.java DEBUG Returned connection 1509563803 to pool.
+2018-06-04 14:46:03 JakartaCommonsLoggingImpl.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2018-06-04 14:46:03 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 14:46:03 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 14:46:03 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 14:46:03 JakartaCommonsLoggingImpl.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Opening JDBC Connection
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Opening JDBC Connection
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Created connection 1394336709.
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@531be3c5]
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Created connection 1236977832.
+2018-06-04 14:46:04 JakartaCommonsLoggingImpl.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@49bac8a8]

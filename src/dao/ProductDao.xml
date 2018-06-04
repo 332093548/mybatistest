@@ -5,13 +5,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 当前xml文件会取代以后daoImpl,因此所有的SQL语句建议编写XML文件中,而且此XML文件需要添加到mybatis.cfg.xml主配置文件中 -->
 <mapper namespace="aa.bb.cc">
    <!-- 此处将要编写数据入库的SQL语句    public void save(Product product)-->
-   <insert id="save" parameterType="model.Product">
+   <insert id="save" parameterType="product">
        <!-- #{name},会自动调用Product.getName()方法  -->
    	   insert into product (name,price,remark) values (#{name},#{price},#{remark})
    </insert>
    
-   <update id="update" parameterType="model.Product">
+   <update id="update" parameterType="product">
        <!-- #{name},会自动调用Product.getName()方法  -->
    	   update product set name = #{name},price = #{price},remark = #{remark} where id = #{id}
    </update>
+   <!-- 如果只有一个参数, 那么#{名称随意},当然为了规范,建议与参数相同 -->
+   <delete id="delete" parameterType="int">
+        delete from product where id = #{id}
+   </delete>
+   <!-- resultType 此属性用来指定查询的返回类型(指定具体集合中的T泛型),注意此属性仅仅在select标签中存在 -->
+   <select id="queryByName" parameterType="string" resultType="product">
+   		select * from product where name like #{keyword}
+   </select>
+   
+   
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

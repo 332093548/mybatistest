@@ -2,6 +2,16 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <!-- mybatis是支持自定义别名的 -->
+    <typeAliases>
+    	<!-- 
+	    	<typeAlias type="model.Product" alias="product"/>
+    	 -->
+    	 <!-- 每次单独配置别名非常繁琐,mybatis支持包扫描,自动扫描model中的所有类,默认别名是类名且第一个字母小写 -->
+    	 <package name="model"/>
+    </typeAliases>
+
     <!-- 连接数据的基本配置 (4个参数) -->
 	<environments default="mysql">
 	    <!--  具体连接配置,取代之前的C3P0 -->
