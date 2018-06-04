@@ -13,9 +13,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<!-- 配置链接池的相关操作 -->
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3306/mysql" />
+				<property name="url" value="jdbc:mysql://localhost:3306/javawebtest" />
 				<property name="username" value="root" />
-				<property name="password" value="root" />
+				<property name="password" value="123456" />
 			</dataSource>
 		</environment>
 		<!-- 可以配置连接到多个数据库 -->
